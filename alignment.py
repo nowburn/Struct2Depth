@@ -125,19 +125,6 @@ def stick_imgs():
             ct += 1
 
 
-def test():
-    img_path = [
-        '/home/nowburn/disk/data/Struct2Depth/kitti/kitti_processed2/2011_09_26_drive_0001_sync_02_mask/0000000000-seg.png',
-        '/home/nowburn/disk/data/Struct2Depth/kitti/kitti_processed2/2011_09_26_drive_0001_sync_02_mask/0000000001-seg.png',
-        '/home/nowburn/disk/data/Struct2Depth/kitti/kitti_processed2/2011_09_26_drive_0001_sync_02_mask/0000000002-seg.png']
-    img1, img2, img3 = align(np.array(Image.open(img_path[0])), np.array(Image.open(img_path[1])),
-                             np.array(Image.open(img_path[2])))
-
-    Image.fromarray(img1).save(path + '0000000000-fseg.png')
-    Image.fromarray(img2).save(path + '0000000001-fseg.png')
-    Image.fromarray(img3).save(path + '0000000002-fseg.png')
-
-
 def copy_del():
     origin = [path + dir for dir in os.listdir(path) if
               dir.split('_')[-1] == 'align']
@@ -158,7 +145,7 @@ def copy_del():
 
 if __name__ == '__main__':
     start_time = time.time()
-    #triplet_align()
+    triplet_align()
     print('Processing gen_align_data ...')
     stick_imgs()
     print('Processing copy_del ...')

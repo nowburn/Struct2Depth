@@ -85,7 +85,7 @@ def run_all():
         for d2 in glob.glob(d + '*/'):
             seqname = d2.split('/')[-2]
             print('Processing sequence', seqname)
-            for subfolder in ['image_02/data', 'image_03/data']:
+            for subfolder in ['image_02/data']:
                 ct = 0
                 seqname = d2.split('/')[-2] + subfolder.replace('image', '').replace('/data', '')
                 if not os.path.exists(OUTPUT_DIR + seqname):
